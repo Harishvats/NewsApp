@@ -4,8 +4,8 @@ import com.example.newsapp.data.model.ApiResponse
 import com.example.newsapp.data.util.Resource
 import com.example.newsapp.domain.repository.NewsRepository
 
-class GetNewsHeadLineUseCase(private val newsRepository: NewsRepository) {
-    suspend fun execute(): Resource<ApiResponse> {
-        return newsRepository.getNewsHeadlines()
+class GetSearchedNewsUseCase(private val newsRepository: NewsRepository) {
+    suspend fun execute(searchQuery: String): Resource<ApiResponse> {
+        return newsRepository.getSearchedNews(searchQuery)
     }
 }
