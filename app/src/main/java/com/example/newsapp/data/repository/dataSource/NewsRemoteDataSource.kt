@@ -4,5 +4,8 @@ import com.example.newsapp.data.model.ApiResponse
 import retrofit2.Response
 
 interface NewsRemoteDataSource {
-    suspend fun getTopHeadlines(): Response<ApiResponse>
+    suspend fun getTopHeadlines(
+        country: String,
+        page: Int
+    ): Response<ApiResponse>
 }

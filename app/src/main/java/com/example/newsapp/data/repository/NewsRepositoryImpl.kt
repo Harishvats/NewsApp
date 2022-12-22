@@ -9,9 +9,12 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 class NewsRepositoryImpl(private val newsRemoteDataSource: NewsRemoteDataSource) : NewsRepository {
-    override suspend fun getNewsHeadlines(): Resource<ApiResponse> {
+    override suspend fun getNewsHeadlines(
+        country: String,
+        page: Int
+    ): Resource<ApiResponse> {
 
-        return responseToResource(newsRemoteDataSource.getTopHeadlines())
+        return responseToResource(newsRemoteDataSource.getTopHeadlines(country, page))
     }
 
     override suspend fun getSearchedNews(searchQuery: String): Resource<ApiResponse> {
