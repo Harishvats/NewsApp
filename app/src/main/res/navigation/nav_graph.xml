@@ -31,5 +31,9 @@
         <argument
             android:name="selected_article"
             app:argType="com.example.newsapp.data.model.Article" />
+        <argument
+            android:name="hide_save_btn"
+            app:argType="boolean" />
+
     </fragment>
 </navigation>
